@@ -149,14 +149,14 @@ n = -10:10;
 f_n_2 = f(n/2);
 figure;
 </pre>
-<img vspace="5" hspace="5" src="Practica_4_01.jpg" alt=""> <img vspace="5" hspace="5" src="Practica_4_02.jpg" alt=""> <p>Considere la funci&oacute;n de tiempo discreto f[n]=e&minus;n/5 cos(πn/5)u[n]. La secci&oacute;n 3.11 utiliza funciones an&oacute;nimas para describir se&ntilde;ales DT. f = @(n) exp(-n/5).*cos(pi*n/5).*(n&gt;=0); Si bien esta funci&oacute;n an&oacute;nima funciona correctamente para una operaci&oacute;n de reducci&oacute;n de resoluci&oacute;n como f[2n], no funciona correctamente durante un operaci&oacute;n de muestreo superior, como f[n/2]. Modifique la funci&oacute;n an&oacute;nima f para que tambi&eacute;n Se adapta correctamente a las operaciones de sobremuestreo. Pruebe su c&oacute;digo computando y trazando f(n/2) sobre (&minus;10 &le; n &le; 10).</p>
+<p>Considere la funci&oacute;n de tiempo discreto f[n]=e&minus;n/5 cos(πn/5)u[n]. La secci&oacute;n 3.11 utiliza funciones an&oacute;nimas para describir se&ntilde;ales DT. f = @(n) exp(-n/5).*cos(pi*n/5).*(n&gt;=0); Si bien esta funci&oacute;n an&oacute;nima funciona correctamente para una operaci&oacute;n de reducci&oacute;n de resoluci&oacute;n como f[2n], no funciona correctamente durante un operaci&oacute;n de muestreo superior, como f[n/2]. Modifique la funci&oacute;n an&oacute;nima f para que tambi&eacute;n Se adapta correctamente a las operaciones de sobremuestreo. Pruebe su c&oacute;digo computando y trazando f(n/2) sobre (&minus;10 &le; n &le; 10).</p>
 <pre class="codeinput">stem(n, f_n_2, <span class="string">'o'</span>,<span class="string">'filled'</span>);
 title(<span class="string">'f[n/2] con Sobremuestreo'</span>);
 xlabel(<span class="string">'n'</span>);
 ylabel(<span class="string">'f[n/2]'</span>);
 grid <span class="string">on</span>;
 </pre>
-<img vspace="5" hspace="5" src="Practica_4_03.jpg" alt=""> <h2 id="10">Problema 3</h2>
+<img vspace="5" hspace="5" src="Practica_4_01.jpg" alt=""> <h2 id="10">Problema 3</h2>
 <p>Supongamos que existe un vector x en MATLAB espacio de trabajo, correspondiente a una duraci&oacute;n finita Se&ntilde;al DT x[n] * (a) Escriba una funci&oacute;n de MATLAB que, cuando pasa el vector x, calcula y devuelve Ex, la energ&iacute;a de x[n]. * (b) Escriba una funci&oacute;n de MATLAB que, cuando pasa el vector x, calcula y devuelve Px, la potencia de x[n]. Supongamos que x[n] es peri&oacute;dico y ese vector x contiene datos para un n&uacute;mero entero de per&iacute;odos de x[n].</p>
 <h2 id="11">Energia</h2>
 <pre class="codeinput">x = @(n) (heaviside(n));
@@ -173,7 +173,7 @@ E =
      5
 
 </pre>
-<img vspace="5" hspace="5" src="Practica_4_04.jpg" alt=""> <h2 id="12">Potencia</h2>
+<img vspace="5" hspace="5" src="Practica_4_02.jpg" alt=""> <h2 id="12">Potencia</h2>
 <pre class="codeinput">syms <span class="string">N</span>;
 x = @(n) (heaviside(n));
 
@@ -183,7 +183,7 @@ stem(n,x(n));
 
 limit(((1/2*N)+1)*(sum(x(n).^2)),N,inf);
 </pre>
-<img vspace="5" hspace="5" src="Practica_4_05.jpg" alt=""> <h2 id="13">Problema 4</h2>
+<img vspace="5" hspace="5" src="Practica_4_03.jpg" alt=""> <h2 id="13">Problema 4</h2>
 <p>3.1-1 Encuentre la energ&iacute;a de las se&ntilde;ales representadas en Figura P3.1-1.</p>
 <h2 id="14">A)</h2>
 <pre class="codeinput">x = @(n) ((-n).*heaviside(-n).*(heaviside(-n)));
@@ -201,7 +201,7 @@ E =
     14
 
 </pre>
-<img vspace="5" hspace="5" src="Practica_4_06.jpg" alt=""> <h2 id="15">B)</h2>
+<img vspace="5" hspace="5" src="Practica_4_04.jpg" alt=""> <h2 id="15">B)</h2>
 <pre class="codeinput">x = @(n) ((-n).*heaviside(-n).*(heaviside(-n)));
 x2= @(n) ((n).*heaviside(n));
 x3= @(n) (heaviside(n));
@@ -217,7 +217,7 @@ E =
     14
 
 </pre>
-<img vspace="5" hspace="5" src="Practica_4_07.jpg" alt=""> <h2 id="16">C)</h2>
+<img vspace="5" hspace="5" src="Practica_4_05.jpg" alt=""> <h2 id="16">C)</h2>
 <pre class="codeinput">x = @(n) ((3*n).*heaviside(n)+(3*n).*heaviside(-n));
 n = -3:3;
 figure
@@ -231,7 +231,7 @@ E =
    252
 
 </pre>
-<img vspace="5" hspace="5" src="Practica_4_08.jpg" alt=""> <h2 id="17">D)</h2>
+<img vspace="5" hspace="5" src="Practica_4_06.jpg" alt=""> <h2 id="17">D)</h2>
 <pre class="codeinput">x = @(n) ((2*n).*heaviside(n)+(-2*n).*heaviside(-n));
 n = -2:2;
 figure
